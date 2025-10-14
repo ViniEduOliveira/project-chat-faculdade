@@ -47,6 +47,8 @@ body {
 
 .footer {
     color: var(--cor-chat);
+    display: flex;
+    justify-content: center;
 }
 
 
