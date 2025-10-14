@@ -32,6 +32,7 @@ body {
     color: var(--cor-chat);
     font-size: 10px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .sidebar {
@@ -39,6 +40,16 @@ body {
     min-width: 50px;
     height: 100%;
     color: var(--cor-chat);
+    padding-top: 50px;
+}
+
+button {
+    width: fit-content;
+    height: 20px;
+    background-color: #0022558a;
+    border-radius: 6px;
+    color: #f2f4f8;
+    border-color: #242424;
 }
 
 .chat-container {
