@@ -11,14 +11,12 @@
         <details>
             <summary>&#9776;</summary>
             <div>
-                <img src="" alt=""> <!---Nossa logo-->
                 <button type="button">Novo Chat</button>
             </div>
             <div>
                 <!---Histórico-->
             </div>
             <div>
-                <img src="" alt=""> <!--Imagem do usuário-->
                 <span>Nome do usuário</span> <!--Criar no PHP-->
                 <details>
                     <button type="button">CONFIGURAÇÔES</button> <!--Modo escuro e claro-->
@@ -29,7 +27,8 @@
     </aside>
     <div class="main-content">
         <header class="header">
-                
+
+            
                 <h1>DolphinIA</h1>
                 <details>
                     <summary>...</summary>
