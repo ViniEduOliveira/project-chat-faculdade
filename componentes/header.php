@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>ChatBot</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>DolphinIA</title>
 </head>
 <body>
     <aside class="sidebar">
@@ -29,7 +29,8 @@
     </aside>
     <div class="main-content">
         <header class="header">
-                <h1>ChatBot</h1>
+                
+                <h1>DolphinIA</h1>
                 <details>
                     <summary>...</summary>
                     <div>
@@ -38,22 +39,3 @@
                     </div>
                 </details>
             </header>
-            <main class="chat-container">
-                 <div id="chat-box">
-            <div class="message bot-message">
-                <p>Olá! Como posso ajudar você hoje?</p>
-            </div>
-        </div>
-
-        <form id="message-form">
-            <input type="text" id="message-input" placeholder="Digite sua pergunta..." required>
-            <button type="submit">Enviar</button>
-        </form>
-            </main>
-            <footer class="footer">
-        <p>&copy; 2025 ChatBot Site. Todos os direitos reservados.</p>
-    </footer> 
-        </div>
-    <script src="script.js"></script>
-</body>
-</html>
