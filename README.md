@@ -12,7 +12,7 @@ Curso: Ciência da Computação | Matéria: Programação Web</p>
 </p>
 
 <h2>Integrantes do Grupo</h2>
-<p><strong>Vinicius Oliveira</strong> (Dev Vini), Giulia Ayumi, Heitor Estrela, 
+<p>Vinicius Oliveira, Giulia Ayumi, Heitor Estrela, 
 Geziel Andrade, Gabriel, Endrick e Davi.</p>
 
 
