@@ -2,8 +2,8 @@
 
 $host = $_ENV['DB_HOST']; // ou o host do seu DB
 $dbname = $_ENV['DB_NAME'];
-$user = $_ENV['USER']; // ex: 'root'
-$pass = $_ENV['PASS'];
+$user = $_ENV['DB_USER']; // ex: 'root'
+$pass = $_ENV['DB_PASS'];
 
 try {
     // Cria uma conexão usando PDO (PHP Data Objects), que é mais seguro
