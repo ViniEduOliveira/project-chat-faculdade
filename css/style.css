@@ -1,14 +1,14 @@
 :root {
-    --cor-de-fundo: #afeef8;
+    --cor-de-fundo:#E0FFFF;
     --cor-barra-lateral: #242424;
-    --cor-chat: #db2828;
+    --cor-chat: #6beff8;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -47,7 +47,7 @@ body {
 button {
     width: fit-content;
     height: 20px;
-    background-color: #e1e1e1;
+    background-color: #afe6f3;
     border-radius: 6px;
     color: #333;
     border-color: #242424;
@@ -78,7 +78,7 @@ button {
 }
 
 .bot-message {
-    background-color: #e1e1e1;
+    background-color: #afe6f3;
     align-self: flex-start; /* Mensagens do bot à esquerda */
 }
 
@@ -120,3 +120,41 @@ button {
 }
 
 
+a:link 
+{
+    color: rgb(114, 214, 214);
+    text-decoration: none;
+}
+
+/* link visitado (visited) */
+a:visited
+{
+    color: rgb(167, 250, 250);;
+}
+
+/* link sobreposição do mouse (mouse over) */
+a:hover
+{
+    color: rgb(167, 250, 250);
+}
+
+/* link ativado (selecionado) (selected link) */
+a:active
+{
+    color: cyan;
+}
+
+
+details summary {
+    list-style: none;         /* remove o marcador padrão */
+    cursor: pointer;          /* mantém o cursor de clique */
+}
+
+details summary::-webkit-details-marker {
+    display: none;            /* remove seta no Chrome, Edge, Safari */
+}
+
+.quemSomos {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px
+}
