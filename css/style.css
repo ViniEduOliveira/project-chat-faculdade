@@ -1,7 +1,7 @@
 :root {
-    --cor-de-fundo: #002255;
+    --cor-de-fundo: #afeef8;
     --cor-barra-lateral: #242424;
-    --cor-chat: #f2f4f8;
+    --cor-chat: #db2828;
 }
 
 * {
@@ -110,7 +110,7 @@ button {
 }
 
 #message-form button:hover {
-    background-color: #003388;
+    background-color: #b0f2fd;
 }
 
 .footer {

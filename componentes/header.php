@@ -18,7 +18,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+
     <link rel="icon" href="Imagens/logo.png" type="image/logo-icon">
     <title>DolphinIA</title>
 </head>
@@ -44,7 +45,7 @@
                     <span><?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
                     <details>
                         <summary>CONFIGURAÇÕES</summary>
-                            <a href="/login.php">ENTRAR</a>
+                            <a href="login.php">ENTRAR</a>
                             <button>CLARO</button>
                             <button>ESCURO</button>
                             <a href="index.php?acao=sair" class="btn-config">SAIR</a>
