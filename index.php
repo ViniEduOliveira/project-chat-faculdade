@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !empty(trim($_POST['pergunta']))) {
         die("Erro ao salvar a conversa: " . $e->getMessage());
     }
 
-header("Location: chat.php");
+header("Location: index.php");
     exit;
 }
 
