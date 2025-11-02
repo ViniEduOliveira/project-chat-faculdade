@@ -56,6 +56,8 @@ $mensagens = $query->fetchAll(PDO::FETCH_ASSOC);
 
 include 'componentes/header.php';
 
+$parsedown = new Parsedown();
+
 ?>
 
 
@@ -78,7 +80,10 @@ include 'componentes/header.php';
                         <?= htmlspecialchars($mensagem["pergunta"]) ?>
                     </div>  
                     <div class="bot-message">
-                        <?= htmlspecialchars($mensagem['resposta']) ?>
+                        <?php 
+                            $htmlResposta = $parsedown->text($mensagem['resposta']); 
+                            echo $htmlResposta;
+                        ?>
                     </div>  
                 <?php endforeach; ?>
             <?php endif; ?>
