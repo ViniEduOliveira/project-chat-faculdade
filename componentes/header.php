@@ -35,48 +35,43 @@
     <title>DolphinIA</title>
 </head>
 <body>
-
-    <!---
-        1 - Deixar mais organizado, a parte de baixo que é as configurações  - Heitor
-        2 - Procurar imagnes para cada função - Vinicius
-    -->
-
     <aside class="sidebar">
-        <details>
-            <summary>&#9776;</summary>
-            <div>
-                <button type="button">Novo Chat</button>
-                <a href="index.php?acao=excluir_chat"><button type="button">Excluir Chat</button></a>
-            </div>
-            <div>
-                <!---Histórico-->
-            </div>
-            <div>
-                <?php if (verificar_usuario()): ?>
-                    <span><?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
-                    <details>
-                        <summary>CONFIGURAÇÕES</summary>
-                            <a href="login.php">ENTRAR</a>
-                            <button>CLARO</button>
-                            <button>ESCURO</button>
-                            <a href="index.php?acao=sair" class="btn-config">SAIR</a>
-                    </details>
+        <details class="main-menu-details"> 
 
-                <?php else: ?>
-                    <span>Visitante</span>
-                    <details>
-                        <summary>CONFIGURAÇÕES</summary>
-                        <a href="login.php" class="btn-config">ENTRAR</a>
-                        <button>CLARO</button>
-                        <button>ESCURO</button>
-                    </details>
-                <?php endif; ?>
-            </div>
+            <summary class="container-icon-menu">&#9776;</summary>
+            
+            <div class="menu-content-wrapper">
+
+                <div class="menu-topo">
+                    <button type="button">Novo Chat</button>
+                    <a href="index.php?acao=excluir_chat"><button type="button">Excluir Chat</button></a>
+                </div>
+                
+                <div>
+                    </div>
+
+                <div class="menu-rodape">
+                    <?php if (verificar_usuario()): ?>
+                        <span>Usuário:<?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
+                        <details>
+                            <summary>Configurações</summary>
+                                <a href="index.php?acao=sair" class="btn-config">SAIR</a>
+                        </details>
+
+                    <?php else: ?>
+                        <span>Usuário: Visitante</span>
+                        <details>
+                            <summary>Configurações</summary>
+                            <a href="login.php" class="btn-config">ENTRAR</a>
+                        </details>
+                    <?php endif; ?>
+                </div>
+            </div> 
         </details>
     </aside>
 
     <div class="main-content">
         <header class="header">
             <h1><a href="/index.php">DolphinIA</a></h1>
-            <h1><a href="/empresa.php">QUEM SOMOS</a></h1>
+            <h1><a href="/empresa.php">Quem Somos</a></h1>
         </header>

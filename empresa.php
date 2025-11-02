@@ -5,7 +5,7 @@
        
         <img src="Imagens/logo.png" alt="">
         <p class="slogan">
-            DolphinIA — onde a inteligência artificial mergulha no oceano do aprendizado.
+            DolphinIA — Onde a inteligência artificial mergulha no oceano do aprendizado.
         </p>
 
         <p>

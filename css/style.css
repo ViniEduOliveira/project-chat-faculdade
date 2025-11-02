@@ -47,8 +47,18 @@ body {
     font-size: 10px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 20px 0 0;
     z-index: 1000;
+}
+
+
+.saudacao-inicial {
+    text-align: center; 
+    font-size: 40px; 
+    font-weight: bold; 
+    padding: 40px 0 20px 0; 
+    width: 100%;
+    color: #4169E1;
 }
 
 
@@ -59,11 +69,14 @@ body {
     height: 100%;
     color: var(--cor-chat);
     transition: min-width 0.3s ease-in-out;
+    padding-bottom: 20px;
+    
 }
 
 .sidebar:has(> .main-menu-details[open]) {
     min-width: 200px; 
 }
+
 
 /*Organização dos details*/
 .main-menu-details {
@@ -71,6 +84,7 @@ body {
   flex-direction: column;
   height: 100%;
   padding-top: 10px;
+  box-sizing: border-box;
 }
 
 .menu-topo {
@@ -106,31 +120,57 @@ body {
 .menu-content-wrapper {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 50px); 
-    padding: 10px;
-    overflow: hidden; 
+    height: calc(100vh - 60px); 
+    overflow: auto; 
+    box-sizing: border-box;
 }
 
 .menu-topo {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    box-sizing: border-box;
 }
 
 .menu-topo button {
     width: 100%;
+    height: 30px;
+    background-color: var(--cor-de-fundo);
+    border-radius: 10px;
 }
-
 
 .menu-rodape {
-    margin-top: auto; 
-    padding-top: 20px; 
+    margin-top: auto;
+    padding: 20px 10px 0 10px;
+    box-sizing: border-box;
 }
 
-.menu-rodape span,
+.menu-rodape span {
+    margin-bottom: 5px; 
+    display: block; 
+}
+
 .menu-rodape details {
-    display: block;
-    padding-bottom: 10px;
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+.menu-rodape details[open] a,
+.menu-rodape details[open] button {
+  display: block; 
+  width: 100%;     
+  margin-bottom: 8px;
+  box-sizing: border-box; 
+  text-align: left;
+  padding: 5px; 
+  height: auto; 
+}
+
+.menu-rodape details[open] .btn-config {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
 details {
@@ -145,9 +185,9 @@ details summary {
 details summary::-webkit-details-marker {
     display: none;            
 }
-/**/
 
 
+/*Botões do ASIDE*/
 button {
     width: fit-content;
     height: 20px;
@@ -156,8 +196,20 @@ button {
     color: #333;
     border-color: #242424;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
 }
-/**/
+
+button:hover {
+    background-color: #b0f2fd;
+    box-shadow: 
+        0 0 5px #b0f2fd,
+        0 0 10px #b0f2fd,
+        0 0 20px #b0f2fd;
+}
+
+
+/*Main do chatbot*/
 .chat-container {
     display: flex;
     flex-direction: column;
@@ -180,11 +232,11 @@ button {
 }
 
 #chat-box {
-    flex: 1; /* Ocupa todo o espaço disponível */
-    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
+    flex: 1; 
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaçamento entre as mensagens */
+    gap: 20px;
     padding-bottom: 20px;
     padding-right: 10px;
 }
@@ -192,30 +244,38 @@ button {
 .message {
     padding: 12px 18px;
     border-radius: 25px;
-    max-width: 70%;
+    max-width: 80%;
     color: #333;
     line-height: 1.5;
     width: fit-content;
 }
 
 .bot-message {
+    background-color: rgba(55, 109, 225, 0.8);
     align-self: flex-start; 
-    background-color: rgba(65, 105, 225, 0.8);
     position: relative;
     margin-left: 60px;
-    max-width: 70%;
+    max-width: 80%;
     width: fit-content;
     border-radius: 15px;
     padding: 10px;
-    color: white;
+    color: #333;
+    padding-left: 20px;
+}
+
+.bot-message ol,
+.bot-message ul {
+    list-style-position: inside; 
+    margin: 0; 
+    padding-left: 1.5em; 
 }
 
 .user-message {
-    background-color: rgba(65, 105, 225, 1.0);
+    background-color: rgba(135, 206, 235, 0.5);
     align-self: flex-end; 
     border-radius: 15px;
     padding: 10px;
-    color:white;
+    color:#333;
 }
 
 #message-form {
@@ -249,10 +309,18 @@ button {
     font-size: 16px;
     font-weight: bold; 
     font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
 }
 
 #message-form button:hover {
     background-color: #b0f2fd;
+    color:white;
+    box-shadow: 
+        0 0 5px #b0f2fd,
+        0 0 10px #b0f2fd,
+        0 0 20px #b0f2fd;
+
 }
 
 
@@ -394,10 +462,16 @@ a:active
     font-weight: bold;
     cursor: pointer; 
     margin-top: 10px;
+    transition: background-color 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
 }
 
 .login-page > form > button:hover {
   background-color: #0056b3;
+  box-shadow: 
+        0 0 5px #007bff,
+        0 0 10px #007bff,
+        0 0 20px #007bff;
 }
 
 .titulo-login {
@@ -411,7 +485,7 @@ a:active
 
 /*Parte final de todas as páginas do site*/
 .footer {
-  color: var(--cor-chat);
+  color: #333;
   padding: 20px; 
   text-align: center;      
   width: 100%;            

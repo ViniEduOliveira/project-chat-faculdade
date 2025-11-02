@@ -65,12 +65,12 @@ $parsedown = new Parsedown();
         <div id="chat-box">
             
             <?php if (empty($mensagens)): ?>
-                <div class="message bot-message">
+                <div class="saudacao-inicial">
                     <?php
                         if (verificar_usuario()) {
-                            echo 'Olá, ' . htmlspecialchars($_SESSION['usuario']) . '! Como posso ajudar você hoje?';
+                            echo 'Olá, ' . htmlspecialchars($_SESSION['usuario']);
                         } else {
-                            echo 'Olá! Como posso ajudar você hoje?';
+                            echo 'Olá!';
                         }
                     ?>
                 </div>
