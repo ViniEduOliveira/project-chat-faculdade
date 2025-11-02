@@ -11,6 +11,17 @@
         exit();
     }
 
+    if (isset($_GET['acao']) && $_GET['acao'] == 'excluir_chat') {
+        if (isset($pdo)) {
+            try {
+                $pdo->exec("TRUNCATE TABLE historico");
+            } catch (PDOException $e) {
+                die("Erro ao excluir o histórico: " . $e->getMessage());
+            }
+        }
+        header('Location: index.php');
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +46,7 @@
             <summary>&#9776;</summary>
             <div>
                 <button type="button">Novo Chat</button>
-                <button type="button">Excluir Chat</button>
+                <a href="index.php?acao=excluir-chat"><button type="button">Excluir Chat</button></a>
             </div>
             <div>
                 <!---Histórico-->
