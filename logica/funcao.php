@@ -33,5 +33,11 @@
             $_SESSION['usuario'] = trim($_POST['nome_usuario']);
         }
     }
+    
+    function excluir_chat() {
+        
+        
+    }
+
 
 ?>

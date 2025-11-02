@@ -17,29 +17,22 @@
 
 <?php include 'componentes/header.php'; ?>
 
-    <!DOCTYPE html>
-    <html lang="PT-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Entrar - DolphinIA</title>
-    </head>
-    <body>
         <!--- 
             1 - Deixar a tela mais bonita - Heitor
             2 - Colocar sugestões de foto de perfil - Vinicius 
         -->
+        <main>
+            <p class="titulo-login"> Seja Bem-Vindo à DolphinIA</p>
+            <div class="login-page">
+                <img src="Imagens/logo.png" alt="">
+                <form action = "login.php" method = "POST">
+                    <p>Cadastra-se em nosso Site Oficial</p>
+                    <label for="nome_usuario">Digite seu nome:</label>
+                    <input type="text" id="nome_usuario" name="nome_usuario" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </main>
 
-        <div>
-            <form action = "login.php" method = "POST">
-                <label for="nome_usuario">Digite seu nome:</label>
-                <input type="text" id="nome_usuario" name="nome_usuario" required>
-                <button type="submit">Salvar</button>
-            </form>
-        </div>
-
-
-    </body>
 
 <?php include 'componentes/footer.php'; ?>

@@ -8,25 +8,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    overflow-wrap: break-word;
+    font-family:'Courier New', Courier, monospace;
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: var(--cor-de-fundo);
-    display: flex;
+    display: flex; 
+    box-sizing: border-box;
+    overflow-y: hidden;     
+    overflow-x: hidden;
+    margin: 0;
 }
 
 .main-content {
     display: flex;
     flex: 1;
-    flex-wrap: wrap;
     flex-direction: column;
+    min-width: 0;
+    overflow-y: auto; 
+    height: 100%;
+    padding-top: 40px;
+    box-sizing: border-box;
 }
 
 .header{
-    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;    
+    left: 40px;     
+    right: 0;
     height: 40px;
     display: flex;
     background-color: var(--cor-barra-lateral);
@@ -34,15 +47,102 @@ body {
     font-size: 10px;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
 }
 
+
+/*Barra lateral*/
 .sidebar {
     background-color: var(--cor-barra-lateral);
-    min-width: 50px;
+    min-width: 40px; 
     height: 100%;
     color: var(--cor-chat);
-    padding-top: 50px;
+    transition: min-width 0.3s ease-in-out;
 }
+
+.sidebar:has(> .main-menu-details[open]) {
+    min-width: 200px; 
+}
+
+/*Organização dos details*/
+.main-menu-details {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.menu-topo {
+  padding: 10px 5px; 
+  display: flex;
+  flex-direction: column; 
+  gap: 8px; 
+}
+
+.menu-topo button {
+  width: 100%; 
+}
+
+.menu-rodape {
+  margin-top: auto;
+  padding: 10px; 
+}
+
+.menu-rodape span,
+.menu-rodape details {
+    display: block; 
+    margin-bottom: 10px;
+}
+
+.container-icon-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 30px; 
+}
+
+.menu-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px); 
+    padding: 10px;
+    overflow: hidden; 
+}
+
+.menu-topo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-topo button {
+    width: 100%;
+}
+
+
+.menu-rodape {
+    margin-top: auto; 
+    padding-top: 20px; 
+}
+
+.menu-rodape span,
+.menu-rodape details {
+    display: block;
+    padding-bottom: 10px;
+}
+
+details summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+    display: none;            
+}
+/**/
+
 
 button {
     width: fit-content;
@@ -52,7 +152,7 @@ button {
     color: #333;
     border-color: #242424;
 }
-
+/**/
 .chat-container {
     display: flex;
     flex-direction: column;
@@ -61,100 +161,254 @@ button {
     justify-content: flex-end; /* Alinha o formulário no final */
 }
 
+.bot-message::before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  top: 0;
+  width: 45px;
+  height: 45px;
+  background-image: url('../Imagens/golfinho.png'); 
+  background-size: cover; 
+  background-position: center;
+  border-radius: 50%;
+}
+
 #chat-box {
     flex: 1; /* Ocupa todo o espaço disponível */
     overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaçamento entre as mensagens */
+    gap: 15px; /* Espaçamento entre as mensagens */
     padding-bottom: 20px;
+    padding-right: 10px;
 }
 
 .message {
-    padding: 10px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    border-radius: 25px;
     max-width: 70%;
     color: #333;
+    line-height: 1.5;
+    width: fit-content;
 }
 
 .bot-message {
-    background-color: #afe6f3;
-    align-self: flex-start; /* Mensagens do bot à esquerda */
+    align-self: flex-start; 
+    background-color: rgba(65, 105, 225, 0.8);
+    position: relative;
+    margin-left: 60px;
+    max-width: 70%;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
 }
 
 .user-message {
-    background-color: #d1e7ff;
-    align-self: flex-end; /* Mensagens do usuário à direita */
+    background-color: rgba(65, 105, 225, 1.0);
+    align-self: flex-end; 
+    border-radius: 15px;
+    padding: 10px;
+    color:white;
 }
 
 #message-form {
     display: flex;
-    gap: 10px; /* Espaço entre o input e o botão */
+    gap: 10px; 
+    align-items: center;
 }
 
 #message-input {
-    flex: 1; /* Ocupa o espaço restante */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    flex: 1; 
+    background-color: rgba(135, 206, 235, 0.5);
+    color: #333;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+#message-input::placeholder {
+  color: #333; 
 }
 
 #message-form button {
-    padding: 0 20px;
+    padding: 0 25px;
     background-color: var(--cor-de-fundo);
     color: var(--cor-chat);
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    height: auto; /* Reseta a altura fixa do seletor 'button' geral */
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold; 
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #message-form button:hover {
     background-color: #b0f2fd;
 }
 
-.footer {
-    color: var(--cor-chat);
-    display: flex;
-    justify-content: center;
-}
 
-
+/*Links de acesso*/
 a:link 
 {
     color: rgb(114, 214, 214);
     text-decoration: none;
 }
 
-/* link visitado (visited) */
 a:visited
 {
     color: rgb(167, 250, 250);;
 }
 
-/* link sobreposição do mouse (mouse over) */
 a:hover
 {
     color: rgb(167, 250, 250);
 }
 
-/* link ativado (selecionado) (selected link) */
 a:active
 {
     color: cyan;
 }
 
 
-details summary {
-    list-style: none;         /* remove o marcador padrão */
-    cursor: pointer;          /* mantém o cursor de clique */
-}
-
-details summary::-webkit-details-marker {
-    display: none;            /* remove seta no Chrome, Edge, Safari */
-}
-
+/*CSS da página quem somos*/
 .quemSomos {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 10px
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    color: #333;
+    line-height: 1.6;
+    padding: 30px 40px;          
+}
+
+.quemSomos h1 {
+    font-size: 2.2rem; 
+    color: var(--cor-barra-lateral); 
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.quemSomos p {
+    font-size: 1rem; 
+    margin-bottom: 1.2em; 
+    text-align: justify;  
+}
+
+.quemSomos .lista-missao {
+    list-style: none; 
+    margin-bottom: 1.2em;
+    padding-left: 0;
+}
+
+.quemSomos .lista-missao li {
+    margin-bottom: 10px;
+}
+
+.quemSomos .slogan {
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 1.2em;
+}
+
+.quemSomos > img {
+    width: 200px;
+    margin: 20px auto auto;
+}
+
+
+/*CSS da página de login*/
+.login-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    height: 400px;
+    margin: 80px auto 0 auto;
+    justify-content: space-around;
+    color: #333;
+    line-height: 1.6;
+    background-color:rgb(255, 255, 255); 
+    padding: 30px 40px;      
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login-page > img {
+    width: 40%;
+    max-width: 250px; 
+    height: auto;
+}
+
+.login-page > form {
+    height: 50%;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.login-page > form > p {
+    font-size: 18px; 
+    font-weight: bold;
+    margin: 0;
+}
+
+.login-page > p {
+  font-size: 30px;
+  text-align: end;
+  margin-top: 80px;
+}
+
+.login-page > form > button {
+    display: flex;
+    align-items: center;       
+    justify-content: center;   
+    
+
+    align-self: center;
+    padding: 15px 30px; 
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    line-height: normal;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; 
+    margin-top: 10px;
+}
+
+.login-page > form > button:hover {
+  background-color: #0056b3;
+}
+
+.titulo-login {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 80px;
+    color:rgba(65, 105, 225, 1.0);
+    font-weight: 100;
+}
+
+
+/*Parte final de todas as páginas do site*/
+.footer {
+  color: var(--cor-chat);
+  padding: 20px; 
+  text-align: center;      
+  width: 100%;            
+  box-sizing: border-box; 
 }
