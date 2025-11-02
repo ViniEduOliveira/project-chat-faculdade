@@ -133,6 +133,10 @@ body {
     padding-bottom: 10px;
 }
 
+details {
+    padding-top: 30px;
+}
+
 details summary {
     list-style: none;
     cursor: pointer;
@@ -151,6 +155,7 @@ button {
     border-radius: 6px;
     color: #333;
     border-color: #242424;
+    cursor: pointer;
 }
 /**/
 .chat-container {
