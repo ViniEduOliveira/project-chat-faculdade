@@ -46,7 +46,7 @@
             <summary>&#9776;</summary>
             <div>
                 <button type="button">Novo Chat</button>
-                <a href="index.php?acao=excluir-chat"><button type="button">Excluir Chat</button></a>
+                <a href="index.php?acao=excluir_chat"><button type="button">Excluir Chat</button></a>
             </div>
             <div>
                 <!---Histórico-->
