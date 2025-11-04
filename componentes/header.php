@@ -43,8 +43,7 @@
             <div class="menu-content-wrapper">
 
                 <div class="menu-topo">
-                    <button type="button">Novo Chat</button>
-                    <a href="index.php?acao=excluir_chat"><button type="button">Excluir Chat</button></a>
+                    <a href="index.php?acao=excluir_chat"><button type="button">Novo Chat</button></a>
                 </div>
                 
                 <div>
@@ -52,7 +51,7 @@
 
                 <div class="menu-rodape">
                     <?php if (verificar_usuario()): ?>
-                        <span>Usuário:<?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
+                        <span>Usuário: <?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
                         <details>
                             <summary>Configurações</summary>
                                 <a href="index.php?acao=sair" class="btn-config">SAIR</a>

@@ -68,7 +68,7 @@ $parsedown = new Parsedown();
                 <div class="saudacao-inicial">
                     <?php
                         if (verificar_usuario()) {
-                            echo 'Olá, ' . htmlspecialchars($_SESSION['usuario']);
+                            echo 'Olá, ' . htmlspecialchars($_SESSION['usuario']) . '!';
                         } else {
                             echo 'Olá!';
                         }
@@ -94,10 +94,6 @@ $parsedown = new Parsedown();
             <input type="text" id="message-input" name="pergunta" placeholder="Digite sua pergunta..." required>
             <button type="submit">Enviar</button>
         </form>
+        <p class="footer">A DolphinIA pode cometer erros. Cheque as respostas.</p>
     </main>
-        
-<?php 
-// 6. INCLUIR O FOOTER
-include 'componentes/footer.php'; 
-?>
 
