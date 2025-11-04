@@ -285,6 +285,7 @@ button:hover {
 }
 
 .user-message {
+    max-width: 70%;
     background-color: rgba(135, 206, 235, 0.5);
     align-self: flex-end; 
     border-radius: 15px;
