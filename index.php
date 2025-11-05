@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !empty(trim($_POST['pergunta']))) {
         CURLOPT_RETURNTRANSFER => true,
         # O curl fará a requisição no formato post pois, diferente do get, ele tem um "corpo", já que as informações estão em formato JSON 
         CURLOPT_POST => true,
-        # Essa linha se refere ao formato da informação enviada (json)
+        # Essa linha se refere aos dados da informação enviada, nesse caso, os dados contidos na váriavel $jsonData
         CURLOPT_POSTFIELDS => $jsonData,
         # O cabeçalho que indica qual documento a api está recebendo 
         CURLOPT_HTTPHEADER => ['Content-Type: application/json']
